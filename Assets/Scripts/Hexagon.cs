@@ -11,7 +11,7 @@ public class Hexagon : MonoBehaviour
     public Text scoreField;
 
     public float speed = 3f;
-    public float rotationSpeed = 1f;
+    public float rotationSpeed = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class Hexagon : MonoBehaviour
     void Update()
     {
         transform.localScale -= Vector3.one * speed * Time.deltaTime;
-        rb.rotation = rb.rotation + rotationSpeed;
+        rb.rotation += rotationSpeed;
 
         if (transform.localScale.x <= 0.5f)
         {
