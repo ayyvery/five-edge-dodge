@@ -13,6 +13,9 @@ public class Hexagon : MonoBehaviour
     public float speed = 3f;
     public float rotationSpeed = 0.1f;
 
+    //private AudioSource source { get { return GetComponent<AudioSource>(); } }
+    //public AudioClip point;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,10 @@ public class Hexagon : MonoBehaviour
         transform.localScale = Vector3.one * 10f;
 
         scoreField = GameObject.Find("Score").GetComponent<Text>();
+
+        gameObject.AddComponent<AudioSource>();
+        //source.clip = point;
+        //source.playOnAwake = false;
     }
 
     // Update is called once per frame
@@ -30,6 +37,7 @@ public class Hexagon : MonoBehaviour
 
         if (transform.localScale.x <= 0.5f)
         {
+            //source.PlayOneShot(point);
             Destroy(gameObject);
             scoreField.text = (int.Parse(scoreField.text) + 1).ToString();
         }

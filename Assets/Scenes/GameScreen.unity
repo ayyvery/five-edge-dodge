@@ -1035,3 +1035,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
+  scoreCounter: {fileID: 1041541211}
+  finalScore: 
